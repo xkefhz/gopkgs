@@ -94,7 +94,7 @@ func doCopy(dval, sval reflect.Value) {
 	}
 }
 
-func ConvertKind(k reflect.Kind) reflect.Kind {
+func convertKind(k reflect.Kind) reflect.Kind {
 	switch k {
 	case reflect.Float32, reflect.Float64:
 		return reflect.Float64
@@ -111,5 +111,5 @@ func matchKind(k reflect.Kind) reflect.Kind {
 	case reflect.Array, reflect.Slice:
 		return reflect.Array
 	}
-	return ConvertKind(k)
+	return convertKind(k)
 }

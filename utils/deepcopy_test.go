@@ -1,6 +1,7 @@
 package util
 
 import (
+	"gopkgs/internal"
 	"testing"
 )
 
@@ -67,7 +68,7 @@ func TestSructCopy(t *testing.T) {
 	a2 := &A{}
 	DeepCopy(a2, a)
 	// t.Log("deep copy test", *a2.AA4[0].N21)
-	if !EqualJSON(a2, a) {
+	if !internal.EqualJSON(a2, a) {
 		t.Error("deep copy error", a2, a)
 	}
 }
@@ -93,7 +94,7 @@ func BenchmarkCopy(b *testing.B) {
 		a2 := &A{}
 		DeepCopy(a2, a)
 		// t.Log("deep copy test", *a2.AA4[0].N21)
-		if !EqualJSON(a2, a) {
+		if !internal.EqualJSON(a2, a) {
 			b.Error("deep copy error", a2, a)
 		}
 	}
@@ -136,7 +137,7 @@ func TestInheritSructCopy(t *testing.T) {
 		GrandPa: GrandPa{GrandAliasId: 400},
 	}
 	DeepCopy(f, f2)
-	if EqualJSON(f, f2) == false {
+	if internal.EqualJSON(f, f2) == false {
 		t.Error("deep copy inherit", f, f2)
 	}
 
@@ -146,7 +147,7 @@ func TestInheritSructCopy(t *testing.T) {
 		Child: Child{N: 100, S: "sb"},
 	}
 	DeepCopy(f2, f)
-	if EqualJSON(f, f2) == false {
+	if internal.EqualJSON(f, f2) == false {
 		t.Error("deep copy inherit", f, f2)
 	}
 }
@@ -166,14 +167,14 @@ func TestArraySliceCopy(t *testing.T) {
 	toA := &TestArray{}
 
 	DeepCopy(toA, fromS)
-	if !EqualJSON(fromS, toA) {
+	if !internal.EqualJSON(fromS, toA) {
 		t.Error("deep copy slice to array error", fromS, toA)
 	}
 
 	fromA := &TestArray{A: [3]int{1, 2, 3}, B: []int{100}}
 	toS := &TestSlice{A: []int{0, 0, 0}}
 	DeepCopy(toA, fromS)
-	if !EqualJSON(fromS, toA) {
+	if !internal.EqualJSON(fromS, toA) {
 		t.Error("deep copy array to slice error", fromA, toS)
 	}
 
