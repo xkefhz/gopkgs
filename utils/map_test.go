@@ -2,7 +2,7 @@ package utils
 
 import (
 	"encoding/json"
-	"gopkgs/internal"
+	"github.com/xkefhz/gopkgs/internal"
 	"testing"
 )
 

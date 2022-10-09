@@ -1,4 +1,4 @@
-module gopkgs
+module github.com/xkefhz/gopkgs
 
 go 1.15
 

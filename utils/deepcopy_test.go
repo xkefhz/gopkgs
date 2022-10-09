@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"gopkgs/internal"
+	"github.com/xkefhz/gopkgs/internal"
 	"testing"
 )
 

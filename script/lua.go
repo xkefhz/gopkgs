@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"sync"
 
+	"github.com/xkefhz/gopkgs/log"
 	lua "github.com/yuin/gopher-lua"
-	"gopkgs/log"
 	luajson "layeh.com/gopher-json"
 	luahelper "layeh.com/gopher-luar"
 )

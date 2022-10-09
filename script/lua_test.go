@@ -2,7 +2,7 @@ package script
 
 import (
 	"encoding/json"
-	"gopkgs/internal"
+	"github.com/xkefhz/gopkgs/internal"
 	"testing"
 
 	lua "github.com/yuin/gopher-lua"
